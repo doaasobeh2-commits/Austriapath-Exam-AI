@@ -1,5 +1,5 @@
 import { a2Models } from './modelsA2';
-import { b1Models } from './modelsB1';
+import { b1Models } from './modelsb1';
 import { b2Models } from './modelsB2';
 
 import { a2Images } from './a2Images';
