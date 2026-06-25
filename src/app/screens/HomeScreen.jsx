@@ -296,9 +296,9 @@ const footerStyle = {
   lineHeight: '1.5',
 };
 const heroTextInsideImageStyle = {
-  maxWidth: '220px',
-  marginTop: '56px',
-  marginLeft: '4px',
+  maxWidth: '285px',
+  marginTop: '78px',
+  marginLeft: '6px',
 };
 
 const heroProtectedStyle = {
