@@ -206,12 +206,16 @@ const watermarkStyle = {
 
 const heroTitleStyle = {
   margin: 0,
-  color: '#1e293b',
-  fontSize: '21px',
-  lineHeight: '1.15',
+  marginTop: '38px',
+  marginLeft: '-18px',
+
+  color: '#1f2937',
+  fontSize: '22px',
+  lineHeight: '1.18',
   fontWeight: '700',
+
+  maxWidth: '250px',
   letterSpacing: '-0.3px',
-  textShadow: '0 1px 2px rgba(255,255,255,0.55)',
 };
 
 
@@ -303,14 +307,15 @@ const heroTextInsideImageStyle = {
 
 const heroProtectedStyle = {
   marginTop: '18px',
-  color: '#2e7d32',
+  color: '#1f2937',
   fontSize: '13px',
-  fontWeight: '600',
+  fontWeight: '700',
+  letterSpacing: '0.2px',
 };
 
 const heroCopyrightStyle = {
   marginTop: '6px',
-  color: '#64748b',
+  color: '#334155',
   fontSize: '12px',
-  fontWeight: '500',
+  fontWeight: '600',
 };
