@@ -112,7 +112,7 @@ function Card({ icon, title, text, color, onClick }) {
 }
 
 function Watermark() {
-  return <img src="/logo.png" alt="" style={watermarkStyle} />;
+  return <img src="/app-icon.png" alt="" style={watermarkStyle} />;
 }
 
 const pageStyle = {
