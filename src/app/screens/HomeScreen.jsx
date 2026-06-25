@@ -55,9 +55,7 @@ export function HomeScreen({ setActiveTab }) {
   <div style={heroTextInsideImageStyle}>
     <h1 style={heroTitleStyle}>Willkommen bei AustriaPath</h1>
 
-    <p style={heroProtectedStyle}>🛡️ Das Programm ist geschützt.</p>
-
-    <p style={heroCopyrightStyle}>© 2026 AustriaPath</p>
+  
   </div>
 </div>
         </div>
@@ -205,12 +203,13 @@ const watermarkStyle = {
 };
 
 const heroTitleStyle = {
-  margin: 0,
-  color: '#183153',
+  marginTop: '78px',
+  marginLeft: '18px',
+  color: '#1f2937',
   fontSize: '22px',
-  lineHeight: '1.2',
   fontWeight: '700',
-  letterSpacing: '-0.4px',
+  lineHeight: '1.2',
+  textShadow: '0 1px 2px rgba(255,255,255,0.6)',
 };
 
 
