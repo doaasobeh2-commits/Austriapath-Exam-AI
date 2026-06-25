@@ -146,7 +146,7 @@ const heroImageStyle = {
  backgroundImage:
   'linear-gradient(90deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.16) 42%, rgba(255,255,255,0.02) 100%), url("/austria-hero.jpeg")',
 
-  backgroundSize: '100% auto',
+  backgroundSize: '105% auto',
 backgroundPosition: 'center top',
 backgroundRepeat: 'no-repeat',
 
@@ -160,7 +160,7 @@ backgroundRepeat: 'no-repeat',
   boxShadow: '0 10px 28px rgba(15, 23, 42, 0.12)',
 };
 const heroLogoStyle = {
-  width: '115px',
+  width: '92px',
   height: 'auto',
   objectFit: 'contain',
 };
@@ -301,10 +301,9 @@ const footerStyle = {
 };
 const heroTextInsideImageStyle = {
   maxWidth: '285px',
-  marginTop: '78px',
-  marginLeft: '6px',
+  marginTop: '88px',
+  marginLeft: '4px',
 };
-
 const heroProtectedStyle = {
   marginTop: '18px',
   color: '#1f2937',
