@@ -206,12 +206,12 @@ const watermarkStyle = {
 
 const heroTitleStyle = {
   margin: 0,
-  color: '#0f172a',
-  fontSize: '34px',
-  lineHeight: '1.1',
-  fontWeight: '800',
+  color: '#183153',
+  fontSize: '22px',
+  lineHeight: '1.2',
+  fontWeight: '700',
+  letterSpacing: '-0.4px',
 };
-
 
 
 const iconStyle = {
@@ -295,18 +295,21 @@ const footerStyle = {
   lineHeight: '1.5',
 };
 const heroTextInsideImageStyle = {
-  maxWidth: '260px',
+  maxWidth: '220px',
+  marginTop: '12px',
+  marginLeft: '10px',
 };
 
 const heroProtectedStyle = {
-  margin: '14px 0 0',
-  color: '#166534',
-  fontSize: '14px',
-  fontWeight: '700',
+  marginTop: '18px',
+  color: '#2e7d32',
+  fontSize: '13px',
+  fontWeight: '600',
 };
 
 const heroCopyrightStyle = {
-  margin: '8px 0 0',
-  color: '#475569',
-  fontSize: '13px',
+  marginTop: '6px',
+  color: '#64748b',
+  fontSize: '12px',
+  fontWeight: '500',
 };
