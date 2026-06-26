@@ -186,15 +186,21 @@ export function ImageTrainingScreen({
         )}
 
         <div style={imageBox}>
-         {(selectedImage.imageUrl || selectedImage.image) ? (
-  <img
-    src={selectedImage.imageUrl || selectedImage.image}
-    alt={selectedImage.title}
-    style={realImageStyle}
-  />
-) : (
+     {(() => {
+  const level = (selectedImage.level || 'B1').toLowerCase();
+  const autoImage = `/images/${level}/${level}-${String(selectedImage.id).padStart(2, '0')}.jpeg`;
+  const imageSrc = selectedImage.imageUrl || selectedImage.image || autoImage;
+
+  return imageSrc ? (
+    <img
+      src={imageSrc}
+      alt={selectedImage.title}
+      style={realImageStyle}
+    />
+  ) : (
     selectedImage.imageText || selectedImage.title
-)}
+  );
+})()}
         </div>
 
         <Card title="📷 Beschreibung">
