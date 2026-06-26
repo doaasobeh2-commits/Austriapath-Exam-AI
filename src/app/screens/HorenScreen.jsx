@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { b2Models } from '../../data/modelsB2';
 import { getSmartPremiumMessage } from '../../data/smartPremiumMessages';
-
+import { b2HorenModels } from '../../data/b2HorenModels';
 const PREMIUM_HINT_COOLDOWN_DAYS = 3;
 const PREMIUM_HINT_COOLDOWN_MS =
   PREMIUM_HINT_COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
@@ -101,50 +101,6 @@ function markPremiumHintShown(storageKey) {
   localStorage.setItem(storageKey, String(Date.now()));
 }
 
-const b2HorenModels = b2Models.map((model) => ({
-  title: `B2 Hören: ${model.title}`,
-  level: 'B2',
-  text:
-    model.id === 2
-      ? `Immer mehr Unternehmen bieten ihren Mitarbeitern die Möglichkeit, von zu Hause aus zu arbeiten. Besonders seit der Corona-Pandemie hat sich Homeoffice in vielen Branchen etabliert. Viele Arbeitnehmer schätzen die gewonnene Flexibilität. Sie sparen Zeit, weil der tägliche Arbeitsweg entfällt, und können ihre Arbeitszeiten oft besser an ihr Privatleben anpassen.
-
-Allerdings gibt es auch kritische Stimmen. Einige Experten warnen davor, dass die Trennung zwischen Beruf und Privatleben schwieriger wird. Wer ständig erreichbar ist, arbeitet häufig länger als geplant. Außerdem kann der persönliche Kontakt zu Kollegen fehlen, was sich negativ auf die Zusammenarbeit und die Motivation auswirken kann.
-
-Unternehmen stehen daher vor der Herausforderung, die Vorteile des Homeoffice zu nutzen und gleichzeitig mögliche Nachteile zu reduzieren. Viele Firmen setzen deshalb auf hybride Arbeitsmodelle. Dabei arbeiten die Beschäftigten teilweise im Büro und teilweise von zu Hause. So sollen Flexibilität und Teamarbeit miteinander verbunden werden.`
-      : model.hoeren?.join('. ') || '',
-  questions:
-    model.id === 2
-      ? [
-          {
-            q: 'Warum bevorzugen viele Arbeitnehmer das Homeoffice?',
-            a: 'Weil sie flexibler arbeiten können und Zeit durch den Wegfall des Arbeitsweges sparen.'
-          },
-          {
-            q: 'Welches Problem nennen Kritiker des Homeoffice?',
-            a: 'Die Grenze zwischen Arbeit und Privatleben wird oft unklar.'
-          },
-          {
-            q: 'Welche Folgen kann der fehlende Kontakt zu Kollegen haben?',
-            a: 'Die Zusammenarbeit und Motivation können darunter leiden.'
-          },
-          {
-            q: 'Wie reagieren viele Unternehmen auf diese Herausforderungen?',
-            a: 'Sie führen hybride Arbeitsmodelle ein.'
-          },
-          {
-            q: 'Was ist das Ziel eines hybriden Arbeitsmodells?',
-            a: 'Flexibilität und Teamarbeit miteinander zu verbinden.'
-          }
-        ]
-      : [],
-  words: model.words || [],
-  verbs: [],
-  grammar: [],
-  mistakes: [],
-  expressions: model.expressions || [],
-  tip:
-    'Bei B2-Hörtexten achten Sie auf Gründe, Folgen, Meinungen und Lösungsvorschläge.'
-}));
 
 const staticA2HorenModels = [
   {
