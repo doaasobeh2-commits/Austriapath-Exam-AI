@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { b2Models } from '../../data/modelsB2';
 import { getSmartPremiumMessage } from '../../data/smartPremiumMessages';
+import { B1HorenScreen } from "./lesen/B1HorenScreen";
 import { b2HorenModels } from '../../data/b2HorenModels';
 const PREMIUM_HINT_COOLDOWN_DAYS = 3;
 const PREMIUM_HINT_COOLDOWN_MS =
@@ -128,9 +129,13 @@ export function HorenScreen({
   userLevel = localStorage.getItem('userLevel') || 'A2'
 }) {
   const level = userLevel;
+
   const [index, setIndex] = useState(0);
   const [showTranscript, setShowTranscript] = useState(false);
   const [showPremiumHint, setShowPremiumHint] = useState(false);
+
+  
+  
 
   const adminHoren = useMemo(() => getAdminHorenModels(), []);
 
@@ -190,7 +195,10 @@ export function HorenScreen({
   const stopText = () => {
     window.speechSynthesis.cancel();
   };
-
+if (level === 'B1') {
+    return <B1HorenScreen setActiveTab={setActiveTab} />;
+  }
+  
   return (
     <div style={pageStyle}>
       <button onClick={() => setActiveTab('home')} style={backButtonStyle}>
