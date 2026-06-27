@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { b2Models } from '../../data/modelsB2';
 import { getSmartPremiumMessage } from '../../data/smartPremiumMessages';
+import { b1LesenModels } from '../../data/b1LesenModels';
 import { B2LesenScreen } from './B2LesenScreen';
+import { B1LesenScreen } from './lesen/B1LesenScreen';
 const PREMIUM_HINT_COOLDOWN_DAYS = 3;
 const PREMIUM_HINT_COOLDOWN_MS =
   PREMIUM_HINT_COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
@@ -168,29 +170,7 @@ const lesenModels = {
     }
   ],
 
-  B1: [
-    {
-      title: 'Deutschkurs am Abend',
-      text:
-        'Anna arbeitet tagsüber in einem Büro. Sie möchte ihre Deutschkenntnisse verbessern, deshalb besucht sie einen Abendkurs. Obwohl sie nach der Arbeit oft müde ist, nimmt sie regelmäßig am Unterricht teil.',
-      questions: [
-        {
-          q: 'Warum besucht Anna einen Abendkurs?',
-          a: 'Sie möchte ihre Deutschkenntnisse verbessern.'
-        },
-        { q: 'Wann findet der Kurs statt?', a: 'Am Abend.' },
-        {
-          q: 'Warum geht Anna trotz Müdigkeit zum Kurs?',
-          a: 'Weil sie Deutsch lernen möchte.'
-        }
-      ],
-      words: ['der Deutschkurs', 'die Teilnehmer', 'die Grammatik', 'der Unterricht'],
-      verbs: ['verbessern', 'besuchen', 'teilnehmen', 'erklären'],
-      grammar: ['deshalb', 'obwohl', 'damit'],
-      mistakes: ['❌ weil sie möchte lernen', '✅ weil sie lernen möchte'],
-      tip: 'Achte auf Konnektoren wie deshalb, obwohl und damit.'
-    }
-  ],
+  B1: b1LesenModels,
 
   B2: b2LesenModels
 };
@@ -202,6 +182,9 @@ export function LesenScreen({
   const level = userLevel;
   if (level === 'B2') {
   return <B2LesenScreen setActiveTab={setActiveTab} />;
+}
+if (level === 'B1') {
+  return <B1LesenScreen setActiveTab={setActiveTab} />;
 }
   const [index, setIndex] = useState(0);
   const [showQuestions, setShowQuestions] = useState(false);

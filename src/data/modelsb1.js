@@ -664,153 +664,283 @@ export const b1Models = [
   }
 ];
 export const b1PlanningModels = [
-{
-  id: 1,
-  title: 'Besuch im Altenheim',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie planen einen Besuch im Altenheim.',
-  points: [
-    'Zeit auswählen',
-    'Aktivitäten planen',
-    'Hilfe anbieten',
-    'Sachen mitbringen'
-  ],
-  example: 'Hallo, wollen wir am Samstag das Altenheim besuchen?'
-},
+  {
+    id: 'b1-plan-01',
+    title: 'Einen Ausflug planen',
+    situation:
+      'Sie planen mit Ihrem Kurskollegen / Ihrer Kurskollegin einen Ausflug.',
+    points: [
+      'Wohin möchten Sie fahren?',
+      'Wann möchten Sie fahren?',
+      'Was möchten Sie mitnehmen?',
+      'Wie möchten Sie dorthin kommen?'
+    ],
+    dialog: [
+      'A: Hallo, wollen wir zusammen einen Ausflug planen?',
+      'B: Ja, gerne. Wohin möchten wir fahren?',
+      'A: Wir könnten an einen See oder in die Berge fahren.',
+      'B: Das ist eine gute Idee. Wann wollen wir fahren?',
+      'A: Wie wäre es mit Samstag?',
+      'B: Samstag passt mir gut. Was sollen wir mitnehmen?',
+      'A: Wir brauchen Wasser, Essen, bequeme Kleidung und eine Kamera.',
+      'B: Einverstanden. Wie kommen wir dorthin?',
+      'A: Ich schlage vor, dass wir mit dem Bus fahren.',
+      'B: Das ist günstig und bequem. Dann machen wir das so.'
+    ],
+    words: ['der Ausflug', 'der Bus', 'das Essen', 'die Kleidung', 'die Kamera'],
+    verbs: ['planen', 'fahren', 'mitnehmen', 'vorschlagen', 'brauchen'],
+    sentences: [
+      'Wie wäre es mit Samstag?',
+      'Ich schlage vor, dass wir mit dem Bus fahren.',
+      'Das passt mir gut.',
+      'Dann machen wir das so.'
+    ],
+    grammar: ['Konjunktiv II: könnten', 'dass-Satz', 'trennbares Verb: mitnehmen'],
+    tip: 'Sprechen Sie über Ort, Zeit, Sachen und Verkehrsmittel.'
+  },
 
-{
-  id: 2,
-  title: 'Grillfest mit Nachbarn',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie möchten mit Ihren Nachbarn grillen.',
-  points: [
-    'Wann',
-    'Was machen',
-    'Nachbarn einladen',
-    'Schlechtes Wetter'
-  ],
-  example: 'Wir könnten am Wochenende grillen.'
-},
+  {
+    id: 'b1-plan-02',
+    title: 'Eine Reise planen',
+    situation:
+      'Sie möchten mit Ihrem Freund / Ihrer Freundin eine kurze Reise planen.',
+    points: [
+      'Wohin möchten Sie reisen?',
+      'Wie viele Tage möchten Sie bleiben?',
+      'Wie möchten Sie fahren?',
+      'Was möchten Sie mitnehmen?'
+    ],
+    dialog: [
+      'A: Hallo, ich möchte mit dir eine Reise planen.',
+      'B: Gute Idee. Hast du schon ein Reiseziel?',
+      'A: Wir könnten nach Salzburg oder nach Wien fahren.',
+      'B: Wien finde ich interessant. Wie viele Tage sollen wir bleiben?',
+      'A: Ich denke, drei Tage sind genug.',
+      'B: Das klingt gut. Wie wollen wir fahren?',
+      'A: Wir können den Zug nehmen. Das ist bequem.',
+      'B: Super. Was sollen wir mitnehmen?',
+      'A: Kleidung, bequeme Schuhe, Wasser und unsere Ausweise.',
+      'B: Gute Idee. Ich nehme auch meine Kamera mit.'
+    ],
+    words: ['die Reise', 'das Reiseziel', 'der Zug', 'der Ausweis', 'die Schuhe'],
+    verbs: ['reisen', 'bleiben', 'nehmen', 'mitnehmen', 'vorschlagen'],
+    sentences: [
+      'Hast du schon ein Reiseziel?',
+      'Drei Tage sind genug.',
+      'Wir können den Zug nehmen.',
+      'Ich nehme auch meine Kamera mit.'
+    ],
+    grammar: ['Modalverb können', 'trennbares Verb: mitnehmen', 'Akkusativ'],
+    tip: 'Bei Reisen immer Ort, Dauer, Verkehr und Gepäck nennen.'
+  },
 
-{
-  id: 3,
-  title: 'Picknick im Park',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie möchten mit Freunden ein Picknick organisieren.',
-  points: [
-    'Ort',
-    'Zeit',
-    'Essen',
-    'Getränke'
-  ],
-  example: 'Wir könnten uns im Stadtpark treffen.'
-},
+  {
+    id: 'b1-plan-03',
+    title: 'Einen Fernseher umtauschen',
+    situation:
+      'Ihr Freund hat einen Fernseher gekauft, aber er funktioniert nicht. Sie möchten ihm helfen.',
+    points: [
+      'Wann haben Sie Zeit?',
+      'Wie kommen Sie zum Geschäft?',
+      'Was ist das Problem?',
+      'Was möchten Sie im Geschäft machen?'
+    ],
+    dialog: [
+      'A: Hallo, du hast gesagt, dein neuer Fernseher funktioniert nicht. Ich möchte dir helfen.',
+      'B: Danke, das ist sehr nett von dir.',
+      'A: Wann hast du Zeit, damit wir zusammen ins Geschäft gehen können?',
+      'B: Am Samstag habe ich frei. Passt dir das?',
+      'A: Ja, Samstag um 10 Uhr ist gut.',
+      'B: Wie kommen wir zum Geschäft?',
+      'A: Wir können mit dem Bus fahren. Das Geschäft liegt im Stadtzentrum.',
+      'B: Gut. Was genau ist das Problem?',
+      'A: Der Fernseher geht nicht an. Wir erklären das dem Verkäufer.',
+      'B: Vielleicht können wir den Fernseher umtauschen oder reparieren lassen.'
+    ],
+    words: ['der Fernseher', 'das Geschäft', 'der Verkäufer', 'das Problem', 'die Reparatur'],
+    verbs: ['funktionieren', 'umtauschen', 'reparieren', 'erklären', 'helfen'],
+    sentences: [
+      'Der Fernseher funktioniert nicht.',
+      'Wir erklären das dem Verkäufer.',
+      'Vielleicht können wir ihn umtauschen.',
+      'Das Geschäft liegt im Stadtzentrum.'
+    ],
+    grammar: ['Modalverb können', 'damit-Satz', 'lassen + Infinitiv'],
+    tip: 'Beschreiben Sie das Problem klar und höflich.'
+  },
 
-{
-  id: 4,
-  title: 'Geburtstagsfeier',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie planen eine Geburtstagsfeier.',
-  points: [
-    'Ort',
-    'Gäste',
-    'Essen',
-    'Musik'
-  ],
-  example: 'Ich finde ein Restaurant gut.'
-},
+  {
+    id: 'b1-plan-04',
+    title: 'Eine Präsentation vorbereiten',
+    situation:
+      'Im Kurs sollen Sie mit Ihrem Freund / Ihrer Freundin eine Präsentation vorbereiten.',
+    points: [
+      'Wo treffen Sie sich?',
+      'Wann treffen Sie sich?',
+      'Was bringen Sie mit?',
+      'Wie machen Sie die Präsentation?'
+    ],
+    dialog: [
+      'A: Hallo, unsere Lehrerin hat uns gebeten, eine Präsentation zu machen.',
+      'B: Ja, richtig. Wo wollen wir uns treffen?',
+      'A: Wir können uns in der Bibliothek treffen. Dort können wir gut arbeiten.',
+      'B: Gute Idee. Wann treffen wir uns?',
+      'A: Wie wäre es mit Donnerstag um 17 Uhr?',
+      'B: Das passt mir gut. Was sollen wir mitbringen?',
+      'A: Ich bringe meinen Laptop und Informationen aus dem Internet mit.',
+      'B: Super. Ich bringe Bilder und Notizen mit.',
+      'A: Und wie machen wir die Präsentation?',
+      'B: Wir teilen die Themen auf und üben am Ende zusammen.'
+    ],
+    words: ['die Präsentation', 'die Bibliothek', 'der Laptop', 'die Notizen', 'das Thema'],
+    verbs: ['vorbereiten', 'mitbringen', 'üben', 'aufteilen', 'sich treffen'],
+    sentences: [
+      'Wo wollen wir uns treffen?',
+      'Ich bringe meinen Laptop mit.',
+      'Wir teilen die Themen auf.',
+      'Am Ende üben wir zusammen.'
+    ],
+    grammar: ['trennbare Verben: mitbringen / aufteilen', 'sich treffen', 'Modalverb wollen'],
+    tip: 'Planen Sie klar: Ort, Zeit, Material und Aufgaben.'
+  },
 
-{
-  id: 5,
-  title: 'Zoo besuchen',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie planen einen Zoobesuch.',
-  points: [
-    'Datum',
-    'Anreise',
-    'Tickets',
-    'Tiere'
-  ],
-  example: 'Wir könnten am Samstag in den Zoo gehen.'
-},
+  {
+    id: 'b1-plan-05',
+    title: 'Ein Konzert besuchen',
+    situation:
+      'Sie möchten mit den Kollegen / Kolleginnen aus dem Deutschkurs ein Konzert besuchen.',
+    points: [
+      'Wo und wann treffen Sie sich?',
+      'Welche Musik möchten Sie hören?',
+      'Wie kaufen Sie die Karten?',
+      'Was möchten Sie anziehen?'
+    ],
+    dialog: [
+      'A: Hallo, hast du Lust, mit den Kollegen aus dem Deutschkurs ein Konzert zu besuchen?',
+      'B: Ja, das klingt toll. Wann und wo wollen wir uns treffen?',
+      'A: Wie wäre es am Samstag um 18 Uhr vor dem Konzerthaus?',
+      'B: Das passt gut. Welche Musik möchtest du hören?',
+      'A: Ich bin eher für Rock. Und du?',
+      'B: Ich auch. Rock-Konzerte machen viel Spaß.',
+      'A: Sollen wir die Karten im Internet kaufen?',
+      'B: Ja, das ist besser. Dann bekommen wir sicher Plätze.',
+      'A: Was ziehst du an?',
+      'B: Eine Jeans und ein T-Shirt. Vielleicht auch eine Jacke.'
+    ],
+    words: ['das Konzert', 'die Karte', 'die Musikrichtung', 'das Konzerthaus', 'die Jacke'],
+    verbs: ['besuchen', 'kaufen', 'anziehen', 'sich treffen', 'hören'],
+    sentences: [
+      'Hast du Lust, ein Konzert zu besuchen?',
+      'Ich bin eher für Rock.',
+      'Wir kaufen die Karten im Internet.',
+      'Was ziehst du an?'
+    ],
+    grammar: ['Infinitiv mit zu', 'trennbares Verb: anziehen', 'Fragen stellen'],
+    tip: 'Reagieren Sie auf Vorschläge und treffen Sie eine Entscheidung.'
+  },
 
-{
-  id: 6,
-  title: 'Sprachkurs planen',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie möchten einen Sprachkurs besuchen.',
-  points: [
-    'Ort',
-    'Beginn',
-    'Dauer',
-    'Kosten'
-  ],
-  example: 'Der Kurs beginnt im September.'
-},
+  {
+    id: 'b1-plan-06',
+    title: 'Einen Sportabend organisieren',
+    situation:
+      'Sie und Ihr Freund möchten einen Sportabend organisieren.',
+    points: [
+      'Wo findet der Sportabend statt?',
+      'Wann findet er statt?',
+      'Wie organisieren Sie den Abend?',
+      'Was brauchen Sie dafür?'
+    ],
+    dialog: [
+      'A: Hallo, ich möchte mit dir einen Sportabend organisieren.',
+      'B: Das ist eine tolle Idee. Wo sollen wir ihn machen?',
+      'A: Wir können ihn in der Sporthalle unserer Schule organisieren.',
+      'B: Gut. Wann wollen wir den Sportabend veranstalten?',
+      'A: Wie wäre es mit Freitag um 18 Uhr?',
+      'B: Das passt mir sehr gut.',
+      'A: Wie wollen wir den Sportabend organisieren?',
+      'B: Wir können verschiedene Spiele und kleine Wettbewerbe vorbereiten.',
+      'A: Gute Idee. Was brauchen wir dafür?',
+      'B: Wir brauchen Bälle, Wasser, Musik und kleine Preise.'
+    ],
+    words: ['der Sportabend', 'die Sporthalle', 'der Wettbewerb', 'der Ball', 'der Preis'],
+    verbs: ['organisieren', 'veranstalten', 'vorbereiten', 'brauchen', 'einladen'],
+    sentences: [
+      'Wo sollen wir ihn machen?',
+      'Wir können Spiele vorbereiten.',
+      'Was brauchen wir dafür?',
+      'Das passt mir sehr gut.'
+    ],
+    grammar: ['Modalverben', 'Akkusativ', 'Fragen mit wo / wann / was'],
+    tip: 'Nennen Sie konkrete Aufgaben und Materialien.'
+  },
 
-{
-  id: 7,
-  title: 'Ausflug mit Kurskollegen',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie planen einen Ausflug.',
-  points: [
-    'Ziel',
-    'Verkehrsmittel',
-    'Zeit',
-    'Verpflegung'
-  ],
-  example: 'Wir könnten nach Salzburg fahren.'
-},
+  {
+    id: 'b1-plan-07',
+    title: 'Kleidung spenden',
+    situation:
+      'Sie möchten mit einem Freund Kleidung an arme Menschen spenden.',
+    points: [
+      'Welche Kleidung möchten Sie spenden?',
+      'Welche Organisation kontaktieren Sie?',
+      'Wann treffen Sie sich?',
+      'Was können Sie außer Kleidung noch spenden?'
+    ],
+    dialog: [
+      'A: Hallo, hast du schon darüber nachgedacht, Kleidung zu spenden?',
+      'B: Ja, das ist eine gute Idee. Viele Menschen brauchen Hilfe.',
+      'A: Welche Kleidung können wir spenden?',
+      'B: Wir können Jacken, Hosen, Schuhe und Pullover spenden.',
+      'A: Welche Organisation sollen wir kontaktieren?',
+      'B: Es gibt eine lokale Organisation in der Nähe.',
+      'A: Wann treffen wir uns?',
+      'B: Am Samstag um 14 Uhr passt mir gut.',
+      'A: Was können wir außer Kleidung noch spenden?',
+      'B: Vielleicht Decken, Taschen oder Hygieneartikel.'
+    ],
+    words: ['die Kleidung', 'die Organisation', 'die Spende', 'die Jacke', 'die Hilfe'],
+    verbs: ['spenden', 'kontaktieren', 'helfen', 'sammeln', 'bringen'],
+    sentences: [
+      'Viele Menschen brauchen Hilfe.',
+      'Wir können Kleidung spenden.',
+      'Welche Organisation sollen wir kontaktieren?',
+      'Samstag passt mir gut.'
+    ],
+    grammar: ['Modalverb können', 'Akkusativ', 'außer + Dativ'],
+    tip: 'Bei sozialen Themen: höflich sprechen und konkrete Hilfe nennen.'
+  },
 
-{
-  id: 8,
-  title: 'Freund nach Unfall besuchen',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Ein Freund hatte einen Unfall.',
-  points: [
-    'Besuchszeit',
-    'Geschenk',
-    'Transport',
-    'Hilfe'
-  ],
-  example: 'Ich bringe Obst und Bücher mit.'
-},
-
-{
-  id: 9,
-  title: 'Zugreise abgesagt',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Ihre Zugreise wurde abgesagt.',
-  points: [
-    'Alternative',
-    'Ticket',
-    'Reservierung',
-    'Rückerstattung'
-  ],
-  example: 'Vielleicht nehmen wir einen anderen Zug.'
-},
-
-{
-  id: 10,
-  title: 'Lernzimmer einrichten',
-  type: 'Etwas planen',
-  level: 'B1',
-  situation: 'Sie möchten ein Zimmer zum Lernen einrichten.',
-  points: [
-    'Möbel',
-    'Laptop',
-    'Beleuchtung',
-    'Kosten'
-  ],
-  example: 'Ein Schreibtisch ist sehr wichtig.'
-}
+  {
+    id: 'b1-plan-08',
+    title: 'Bei einer Café-Eröffnung helfen',
+    situation:
+      'Ihr Freund hat ein Café eröffnet und braucht Hilfe bei der Vorbereitung.',
+    points: [
+      'Wer hilft?',
+      'Was bringen Sie zum Essen und Trinken mit?',
+      'Wo treffen Sie sich?',
+      'Was brauchen Sie für die Dekoration?'
+    ],
+    dialog: [
+      'A: Hallo, mein Freund hat ein Café eröffnet und braucht Hilfe.',
+      'B: Das klingt interessant. Wer von uns kann ihm helfen?',
+      'A: Ich kann helfen, besonders bei der Dekoration.',
+      'B: Sehr gut. Was sollen wir zum Essen und Trinken mitbringen?',
+      'A: Ich bringe einen Kuchen und ein paar Getränke mit.',
+      'B: Gute Idee. Wo treffen wir uns?',
+      'A: Wir treffen uns direkt im Café um 10 Uhr.',
+      'B: Was brauchen wir noch für die Dekoration?',
+      'A: Wir brauchen Blumen, Luftballons und kleine Schilder.',
+      'B: Perfekt. Dann helfen wir ihm am Samstag.'
+    ],
+    words: ['das Café', 'die Eröffnung', 'die Dekoration', 'der Kuchen', 'die Getränke'],
+    verbs: ['helfen', 'eröffnen', 'mitbringen', 'dekorieren', 'brauchen'],
+    sentences: [
+      'Mein Freund hat ein Café eröffnet.',
+      'Ich kann bei der Dekoration helfen.',
+      'Wir treffen uns direkt im Café.',
+      'Dann helfen wir ihm am Samstag.'
+    ],
+    grammar: ['Perfekt: hat eröffnet', 'Dativ: ihm helfen', 'trennbares Verb: mitbringen'],
+    tip: 'Bei Planung: immer sagen, wer was macht.'
+  }
 ];

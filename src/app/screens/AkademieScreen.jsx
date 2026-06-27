@@ -79,7 +79,80 @@ const b2ExpressCards = [
       'Zusammenfassend lässt sich sagen, dass eine gute Balance wichtig ist.'
   }
 ];
-
+const b1ExpressCards = [
+  {
+    title: 'vorschlagen',
+    rule: 'vorschlagen, dass ...',
+    words: ['einen Termin', 'einen Ort', 'eine Lösung'],
+    example: 'Ich schlage vor, dass wir mit dem Bus fahren.'
+  },
+  {
+    title: 'mitbringen',
+    rule: 'trennbares Verb',
+    words: ['Essen', 'Getränke', 'einen Laptop', 'eine Kamera'],
+    example: 'Ich bringe Wasser und Essen mit.'
+  },
+  {
+    title: 'sich treffen',
+    rule: 'sich treffen + Uhrzeit / Ort',
+    words: ['um 18 Uhr', 'vor dem Geschäft', 'in der Bibliothek'],
+    example: 'Wir treffen uns am Samstag um 10 Uhr.'
+  },
+  {
+    title: 'passen',
+    rule: 'Das passt mir gut.',
+    words: ['Samstag', '10 Uhr', 'der Termin'],
+    example: 'Samstag passt mir gut.'
+  },
+  {
+    title: 'brauchen',
+    rule: 'brauchen + Akkusativ',
+    words: ['Wasser', 'Kleidung', 'Tickets', 'Bälle'],
+    example: 'Wir brauchen Wasser, Essen und bequeme Kleidung.'
+  },
+  {
+    title: 'organisieren',
+    rule: 'organisieren + Akkusativ',
+    words: ['einen Ausflug', 'einen Sportabend', 'eine Präsentation'],
+    example: 'Wir organisieren einen Sportabend.'
+  },
+  {
+    title: 'helfen',
+    rule: 'helfen + Dativ',
+    words: ['meinem Freund', 'dem Nachbarn', 'der Familie'],
+    example: 'Ich möchte meinem Freund helfen.'
+  },
+  {
+    title: 'umtauschen',
+    rule: 'trennbares Verb',
+    words: ['den Fernseher', 'das Gerät', 'die Ware'],
+    example: 'Wir möchten den Fernseher umtauschen.'
+  },
+  {
+    title: 'sich entscheiden für',
+    rule: 'sich entscheiden für + Akkusativ',
+    words: ['den Bus', 'den Zug', 'Samstag', 'diesen Plan'],
+    example: 'Wir entscheiden uns für den Bus.'
+  },
+  {
+    title: 'Wie wäre es mit ...?',
+    rule: 'Vorschlag machen',
+    words: ['Samstag', '18 Uhr', 'dem Zug', 'einem Konzert'],
+    example: 'Wie wäre es mit Samstag um 18 Uhr?'
+  },
+  {
+    title: 'Einverstanden.',
+    rule: 'zustimmen',
+    words: ['Das klingt gut.', 'Das finde ich gut.', 'Machen wir so.'],
+    example: 'Einverstanden, dann treffen wir uns vor dem Geschäft.'
+  },
+  {
+    title: 'Dann machen wir das so.',
+    rule: 'Gespräch abschließen',
+    words: ['am Samstag', 'um 10 Uhr', 'mit dem Bus'],
+    example: 'Dann machen wir das so.'
+  }
+];
 const splitItems = (value) => {
   if (!value) return [];
 
@@ -143,11 +216,13 @@ export function AkademieScreen({ setActiveTab, selectedLevel = 'A2' }) {
 
         <p style={subtitleStyle}>
           {level === 'B2'
-            ? 'B2 Express: wichtige Verben, Strukturen und Prüfungssätze für Diskussion und gemeinsame Lösung.'
-            : `Grammatik, Satzbau, Konnektoren, Wortschatz und wichtige Verben für ${level}.`}
+  ? 'B2 Express: wichtige Verben, Strukturen und Prüfungssätze für Diskussion und gemeinsame Lösung.'
+  : level === 'B1'
+    ? 'B1 Express: wichtige Verben, Redemittel und Prüfungssätze für Planung und Alltag.'
+    : `Grammatik, Satzbau, Konnektoren, Wortschatz und wichtige Verben für ${level}.`}
         </p>
 
-        {level !== 'B2' && (
+        {level === 'A2' && (
           <div style={tabsStyle}>
             <button onClick={() => setSection('grammatik')} style={tabStyle(section === 'grammatik')}>
               Grammatik
@@ -171,14 +246,20 @@ export function AkademieScreen({ setActiveTab, selectedLevel = 'A2' }) {
           Aktuelles Niveau: <strong>{level}</strong>
         </div>
 
-        {level === 'B2' ? (
-          <div>
-            {b2ExpressCards.map((card, index) => (
-              <B2ExpressCard key={index} card={card} />
-            ))}
-          </div>
-        ) : (
-          <div style={cardStyle}>
+       {level === 'B2' ? (
+  <div>
+    {b2ExpressCards.map((card, index) => (
+      <ExpressCard key={index} card={card} />
+    ))}
+  </div>
+) : level === 'B1' ? (
+  <div>
+    {b1ExpressCards.map((card, index) => (
+      <ExpressCard key={index} card={card} />
+    ))}
+  </div>
+) : (
+  <div style={cardStyle}>
             {section === 'grammatik' && (
               <ContentList title={`Grammatik ${level}`} items={data.grammar} emptyText={`Für ${level} sind noch keine Grammatikpunkte verfügbar.`} />
             )}
@@ -276,10 +357,10 @@ function ContentList({ title, items, emptyText }) {
   );
 }
 
-function B2ExpressCard({ card }) {
+function ExpressCard({ card }) {
   return (
-    <div style={b2CardStyle}>
-      <h2 style={b2CardTitleStyle}>🔹 {card.title}</h2>
+    <div style={expressCardStyle}>
+<h2 style={expressCardTitleStyle}>🔹 {card.title}</h2>
 
       <p style={ruleStyle}>{card.rule}</p>
 
@@ -370,7 +451,7 @@ const cardStyle = {
   lineHeight: 1.6,
 };
 
-const b2CardStyle = {
+const expressCardStyle = {
   background: 'white',
   borderRadius: '18px',
   padding: '16px',
@@ -381,7 +462,7 @@ const b2CardStyle = {
   border: '1px solid #e2e8f0',
 };
 
-const b2CardTitleStyle = {
+const expressCardTitleStyle = {
   margin: '0 0 8px',
   fontSize: '20px',
   color: '#1e3a8a',
